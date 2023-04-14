@@ -1,26 +1,22 @@
-import yaml
-
-# json file will store inventory
 # menu
 # add item
 # remove item
 # retrieve item
 # return item
 
-#open inventory file
-file = open("inventory.yml", "r+")
-inventory = yaml.safe_load(file)
+#set inventory array
+inventory = []
 
 #menu options
 def add_item():
     print("What item do you want to add to the inventory?")
-    item = "- '" + input() + "'"
-    print(item)
-    item_yaml = yaml.safe_load(item)
-    yaml.dump(item_yaml, file)
+    item = input()
+    inventory.append(item)
   
 def remove_item():
-    print("remove item")
+    print("What item do you want to remove from the inventory?")
+    item = input()
+    inventory.remove(item)
 
 def retrieve_item():
     print("retrieve item")
