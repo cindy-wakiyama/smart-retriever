@@ -1,4 +1,5 @@
 from guizero import *
+from handleRequest import *
 
 def check_input():
     if user_input.value in list_items:
@@ -21,12 +22,13 @@ window = Window(app, title="Insert New Item")
 window.hide()
 
 
-list_items = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8"]
+#list_items = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8"]
 
+title = Text(app, text="Smart Retriever", size=20)
 
 intro = Text(app, text="Please type item to retrieve")
 
-list_box = ListBox(app, items=list_items)
+list_box = ListBox(app, items=inventory)
 
 user_input = TextBox(app)
 
@@ -40,6 +42,8 @@ successful_reply = Text(app)
 new_item_button = PushButton(app, text="Insert New Item", command=open_new_item_window)
 
 close_new_item_window_btn = PushButton(window, text="Close", command=close_new_item_window)
+
+
 
 
 app.display()
