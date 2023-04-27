@@ -1,49 +1,32 @@
-from guizero import *
+from guizero import App, PushButton, Text, Box
 from handleRequest import *
-
-def check_input():
-    if user_input.value in list_items:
-      reply.value = "Item is in list!"
-      successful_reply.value = "Retrieving item..."
-      # add function to retrive item by moving motors
-    else:
-      reply.value = "Item is not in list, please try again"
-      successful_reply.value = ""
-
-def open_new_item_window():
-  window.show()
-
-def close_new_item_window():
-  window.hide()
 
 app = App(title="Smart Retriever")
 
-window = Window(app, title="Insert New Item")
-window.hide()
+# title= Text(app, text="Smart Retriever", grid=[0,0,3,0])
 
+#Retrieve
+retrievelabel = Text(app, text="Press button to retrieve:")
+retrivebox = Box(app, layout="grid")
+retrieve1button = PushButton(retrivebox, command=retrieve1, text="1", grid=[1,1])
+retrieve2button = PushButton(retrivebox, command=retrieve2, text="2", grid=[2,1])
+retrieve3button = PushButton(retrivebox, command=retrieve3, text="3", grid=[3,1])
+retrieve4button = PushButton(retrivebox, command=retrieve4, text="4", grid=[1,2])
+retrieve5button = PushButton(retrivebox, command=retrieve5, text="5", grid=[2,2])
+retrieve6button = PushButton(retrivebox, command=retrieve6, text="6", grid=[3,2])
+retrieve7button = PushButton(retrivebox, command=retrieve7, text="7", grid=[1,3])
+retrieve8button = PushButton(retrivebox, command=retrieve8, text="8", grid=[2,3])
 
-#list_items = ["item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8"]
-
-title = Text(app, text="Smart Retriever", size=20)
-
-intro = Text(app, text="Please type item to retrieve")
-
-list_box = ListBox(app, items=inventory)
-
-user_input = TextBox(app)
-
-submit_button = PushButton(app, text="Submit", command=check_input)
-
-reply = Text(app)
-
-successful_reply = Text(app)
-
-
-new_item_button = PushButton(app, text="Insert New Item", command=open_new_item_window)
-
-close_new_item_window_btn = PushButton(window, text="Close", command=close_new_item_window)
-
-
-
+#Return
+retrievelabel = Text(app, text="Press button to return:")
+returnbox = Box(app, layout="grid")
+return1button = PushButton(returnbox, command=return1, text="1", grid=[1,1])
+return2button = PushButton(returnbox, command=return2, text="2", grid=[2,1])
+return3button = PushButton(returnbox, command=return3, text="3", grid=[3,1])
+return4button = PushButton(returnbox, command=return4, text="4", grid=[1,2])
+return5button = PushButton(returnbox, command=return5, text="5", grid=[2,2])
+return6button = PushButton(returnbox, command=return6, text="6", grid=[3,2])
+return7button = PushButton(returnbox, command=return7, text="7", grid=[1,3])
+return8button = PushButton(returnbox, command=return8, text="8", grid=[2,3])
 
 app.display()
