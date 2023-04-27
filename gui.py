@@ -1,5 +1,5 @@
 from guizero import App, PushButton, Waffle
-import handleRequest.py
+import handleRequest
 
 app = App(title="Smart Retriever")
 
