@@ -1,44 +1,50 @@
-# menu
-# add item
-# remove item
-# retrieve item
-# return item
+# functions to handle button presses in GUI
 
-#set inventory array
-inventory = []
+def retrieve1():
+    print("Pressed retrieve 1")
 
-#menu options
-def add_item():
-    print("What item do you want to add to the inventory?")
-    item = input()
-    inventory.append(item)
-  
-def remove_item():
-    print("What item do you want to remove from the inventory?")
-    item = input()
-    inventory.remove(item)
+def retrieve2():
+    print("Pressed retrieve 2")
 
-def retrieve_item():
-    print("retrieve item")
+def retrieve3():
+    print("Pressed retrieve 3")
 
-def return_item():
-    print("return item")
+def retrieve4():
+    print("Pressed retrieve 4")
 
-def menu():
-    print("Choose an option: \n 1. Add item \n 2. Remove item \n 3. Retrive item \n 4. Return item \n")
-    choice = input()
-    if choice == "1":
-        add_item()
-    elif choice == "2":
-        remove_item()
-    elif choice == "3":
-        retrieve_item()
-    elif choice == "4":
-        return_item()
-    else:
-        menu()
+def retrieve5():
+    print("Pressed retrieve 5")
 
-menu()
+def retrieve6():
+    print("Pressed retrieve 6")
 
+def retrieve7():
+    print("Pressed retrieve 7")
 
+def retrieve8():
+    print("Pressed retrieve 8")
 
+#RETURN FUNCTIONS
+def return1():
+    print("Pressed return 1")
+
+def return2():
+    print("Pressed return 2")
+
+def return3():
+    print("Pressed return 3")
+
+def return4():
+    print("Pressed return 4")
+
+def return5():
+    print("Pressed return 5")
+
+def return6():
+    print("Pressed return 6")
+
+def return7():
+    print("Pressed return 7")
+
+def return8():
+    print("Pressed return 8")
