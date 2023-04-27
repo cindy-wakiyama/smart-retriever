@@ -9,6 +9,9 @@ import time
 from adafruit_motorkit import MotorKit
 from adafruit_motor import stepper # this adds more controls to the onestep() function
 
+#from initial with a little bit of spae, 1000 steps will work (backwards in code, forwards in motor)
+# from initial with no space is 950 (forwards in code)
+
 # connects to the hat
 #kit = MotorKit(i2c=board.I2C())
 
@@ -22,35 +25,58 @@ kit2 = MotorKit(address=0x61)
 print("tests starting")
 
 # Motor 3 connects to the terminals M1 and M2 on the second hat
-print("testing stepper motor 3")
-for i in range(400):
-    kit2.stepper1.onestep(direction=stepper.BACKWARD)
-    time.sleep(0.01)
+# print("testing stepper motor 3")
+# for i in range(400):
+#     kit2.stepper1.onestep(direction=stepper.BACKWARD)
+#     time.sleep(0.01)
 
-print("testing electromotor")
-for i in range(200):
-    kit2.motor3.throttle = 1.0
-    time.sleep(0.01)
+# print("testing electromotor")
+# for i in range(200):
+#     kit2.motor3.throttle = 1.0
+#     time.sleep(0.01)
 
-print("testing stepper motor 3")
-for i in range(400):
-    kit2.stepper1.onestep()
-    time.sleep(0.01)
+# print("testing stepper motor 3")
+# for i in range(400):
+#     kit2.stepper1.onestep()
+#     time.sleep(0.01)
 
 # Motor 1 connects to terminals M1 and M2 on the first hat
 print("testing stepper motor 1")
-for i in range(500):
+for i in range(7000):
     # onestep() is one single coil step for the motor
-    kit1.stepper1.onestep(direction=stepper.BACKWARD)
+    kit2.stepper1.onestep()
     time.sleep(0.01)
+
+kit1.stepper1.release()
+
+# for i in range(950):
+#     # onestep() is one single coil step for the motor
+#     kit1.stepper2.onestep()
+#     time.sleep(0.01)
+
+# kit1.stepper2.release()
+
+# for i in range(1000):
+#     # onestep() is one single coil step for the motor
+#     kit1.stepper1.onestep()
+#     time.sleep(0.01)
+
+# kit1.stepper1.release()
+
+# for i in range(950):
+#     # onestep() is one single coil step for the motor
+#     kit1.stepper2.onestep(direction=stepper.BACKWARD)
+#     time.sleep(0.01)
+
+# kit1.stepper2.release()
 
 # Motor 2 connects to the terminals M3 and M4 on the first hat
-print("testing stepper motor 2")
-for i in range(600):
-    kit1.stepper2.onestep(direction=stepper.BACKWARD)
-    time.sleep(0.01)
+# print("testing stepper motor 2")
+# for i in range(600):
+#     kit1.stepper2.onestep(direction=stepper.BACKWARD)
+#     time.sleep(0.01)
 
-kit2.motor3.throttle = 0
+#kit2.motor3.throttle = 0
 
 # # onestep() has two options:
 # #   direction:
@@ -124,4 +150,5 @@ kit2.motor3.throttle = 0
 #     kit2.stepper1.onestep(style=stepper.MICROSTEP)
 #     time.sleep(0.01)
 
-# print("tests finished")
+
+print("tests finished")
