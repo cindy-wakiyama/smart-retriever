@@ -5,15 +5,16 @@ app = App(title="Smart Retriever", bg = "#fbe8a6")
 
 title= Text(app, text="Smart Retriever", color="#303c6c")
  #font="Courier", size=20)
-title.tk.config(font=("Courier", 20, "bold"))
+title.tk.config(font=("Showcard Gothic", 20))
 #303c6c
 
-#Retrieve
-retrievelabel = Text(app, text="Press button to retrieve:", font="Courier")
+#Retrieve Box
+retrievelabel = Text(app, text="Press button to retrieve:", font="Courier", color="#303c6c")
 retrievebox = Box(app, layout="grid")
-#, bg = "#f4976c"
-# retrievebox.bg = "#f4976c"
-# retrievebox.text_color = "white"
+retrievebox.text_color = "white"
+retrievebox.text_size = 12
+
+#Retrieve Buttons
 retrieve1button = PushButton(retrievebox, command=retrieve1, text="1", grid=[1,1])
 retrieve1button.bg = "#f4976c"
 retrieve2button = PushButton(retrievebox, command=retrieve2, text="2", grid=[2,1])
@@ -31,9 +32,13 @@ retrieve7button.bg = "#f4976c"
 retrieve8button = PushButton(retrievebox, command=retrieve8, text="8", grid=[2,3])
 retrieve8button.bg = "#f4976c"
 
-#Return
-retrievelabel = Text(app, text="Press button to return:", font="Courier")
+#Return Box
+retrievelabel = Text(app, text="Press button to return:", font="Courier", color="#303c6c")
 returnbox = Box(app, layout="grid")
+returnbox.text_color = "white"
+returnbox.text_size = 12
+
+#Return Buttons
 return1button = PushButton(returnbox, command=return1, text="1", grid=[1,1])
 return1button.bg = "#f4976c"
 return2button = PushButton(returnbox, command=return2, text="2", grid=[2,1])
