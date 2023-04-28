@@ -19,7 +19,7 @@ kit2 = MotorKit(address=0x61)
 
 def pickUp():
     # lower magnet
-    for i in range(900):
+    for i in range(1000):
         kit2.stepper1.onestep()
         time.sleep(0.01)
 
@@ -28,13 +28,13 @@ def pickUp():
     time.sleep(0.1)
 
     # pull magnet up
-    for i in range(950):
+    for i in range(1000):
         kit2.stepper1.onestep(direction=stepper.BACKWARD)
         time.sleep(0.01)
 
 def dropOff():
     # lower magnet
-    for i in range(900):
+    for i in range(1000):
         kit2.stepper1.onestep()
         time.sleep(0.01)
 
@@ -43,9 +43,12 @@ def dropOff():
     time.sleep(0.1)
 
     # pull magnet up
-    for i in range(950):
+    for i in range(1000):
         kit2.stepper1.onestep(direction=stepper.BACKWARD)
         time.sleep(0.01)
+        
+    #release
+    kit2.stepper1.release()
 
 def retrieve1():
     for i in range(1000):
